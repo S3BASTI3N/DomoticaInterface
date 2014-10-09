@@ -11,13 +11,23 @@ The demonstration server can be found [here](http://www.uvaatwork.nl/DomoticaInt
 
 ## Mockups of the different activities.
 
+#### HomeActivity
+
 ![](../images/HomeScreen.png)
+
+#### GroupActivity
 
 ![](../images/GroupScreen.png)
 
+#### DeviceActivity
+
 ![](../images/DeviceScreen.png)
 
+#### LogicActivity
+
 ![](../images/LogicScreen.png)
+
+#### RuleActivity
 
 ![](../images/RuleScreen.png)
 

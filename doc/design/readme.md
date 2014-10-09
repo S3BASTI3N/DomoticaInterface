@@ -1,6 +1,10 @@
 # Design Document
 ------------------
 
+## Demonstration Server
+
+The demonstration server can be found at: [http://localhost:63342/DomoticaInterface/index.php].
+
 ### Dataflow between the different classes.
 
 ![](../images/Dataflow.png)

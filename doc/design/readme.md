@@ -3,7 +3,7 @@
 
 ## Demonstration Server
 
-The demonstration server can be found at: [http://localhost:63342/DomoticaInterface/index.php].
+The demonstration server can be found [here](http://www.uvaatwork.nl/DomoticaInterface/index.php).
 
 ### Dataflow between the different classes.
 
@@ -47,5 +47,5 @@ id(int), name(String), email(String)
 
 Toast, for on activity notifications.
 
-Android-color-picker, for selection a color for multicolored lights.
-[https://www.code.google.com/p/android-color-picker]
+[Android-color-picker](https://www.code.google.com/p/android-color-picker), for selection a color for multicolored lights.
+

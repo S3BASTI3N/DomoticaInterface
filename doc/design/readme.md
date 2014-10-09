@@ -1,14 +1,14 @@
 # Design Document
 ------------------
 
-![]{../images/Dataflow.png}
+![](../images/Dataflow.png)
 
-![]{../images/HomeScreen.png}
+![](../images/HomeScreen.png)
 
-![]{../images/GroupScreen.png}
+![](../images/GroupScreen.png)
 
-![]{../images/DeviceScreen.png}
+![](../images/DeviceScreen.png)
 
-![]{../images/LogicScreen.png}
+![](../images/LogicScreen.png)
 
-![]{../images/RuleScreen.png}
+![](../images/RuleScreen.png)

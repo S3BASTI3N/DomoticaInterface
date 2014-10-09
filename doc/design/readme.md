@@ -57,5 +57,5 @@ id(int), name(String), email(String)
 
 Toast, for on activity notifications.
 
-[Android-color-picker](https://www.code.google.com/p/android-color-picker), for selection a color for multicolored lights.
+[Android-color-picker](https://code.google.com/p/android-color-picker), for selection a color for multicolored lights.
 

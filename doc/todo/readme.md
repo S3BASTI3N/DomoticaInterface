@@ -4,10 +4,9 @@
 
 ##### App side
 
-- construct database
-- write accessor functions to the database
-- write a-sync functions to write changes to the database
-- write a-sync functions to write changes to the server
+- let user edit groups
+- let user edit device properties
+- let user pick a color
 - write broadcast receiver which will wait for messages from the server
 - write service which will be waiting for messages from the broadcast receiver
 - let broadcast receiver start a service which will write the changes to the database
@@ -15,9 +14,8 @@
 
 #### Server side
 
-- let server send a push notification to the application
 - display all messages from the application in the server console
-- send a full database to the application when requested
+- let server send a push notification to the application
 - execute the application messages
 - handle page updates when there has been a database change
 

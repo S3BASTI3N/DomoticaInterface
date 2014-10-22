@@ -2,17 +2,14 @@ package net.cs76.projects.student10340912.DomoticaInterface.DataManagement;
 
 import android.app.Activity;
 import android.content.Context;
-import android.database.sqlite.SQLiteDatabase;
-import android.support.v7.app.ActionBarActivity;
 import android.util.Log;
 
 import net.cs76.projects.student10340912.DomoticaInterface.utils.DatabaseUpdatedInterface;
-import net.cs76.projects.student10340912.DomoticaInterface.utils.Device;
-import net.cs76.projects.student10340912.DomoticaInterface.utils.Group;
-import net.cs76.projects.student10340912.DomoticaInterface.utils.LogicRule;
-import net.cs76.projects.student10340912.DomoticaInterface.utils.LogicRuleStateDescriber;
+import net.cs76.projects.student10340912.DomoticaInterface.ConfigurableObjects.Device;
+import net.cs76.projects.student10340912.DomoticaInterface.ConfigurableObjects.Group;
+import net.cs76.projects.student10340912.DomoticaInterface.ConfigurableObjects.LogicRule;
+import net.cs76.projects.student10340912.DomoticaInterface.ConfigurableObjects.LogicRuleStateDescriber;
 
-import java.lang.reflect.Array;
 import java.util.ArrayList;
 
 /**

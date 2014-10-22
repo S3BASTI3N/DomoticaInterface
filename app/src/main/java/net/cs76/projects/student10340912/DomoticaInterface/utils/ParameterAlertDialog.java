@@ -6,16 +6,14 @@ import android.content.DialogInterface;
 import android.text.InputType;
 import android.util.Log;
 import android.view.View;
-import android.view.ViewGroup;
-import android.widget.AdapterView;
 import android.widget.EditText;
-import android.widget.ListView;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
-import android.widget.TextView;
 
+import net.cs76.projects.student10340912.DomoticaInterface.ConfigurableObjects.Device;
+import net.cs76.projects.student10340912.DomoticaInterface.ConfigurableObjects.Group;
+import net.cs76.projects.student10340912.DomoticaInterface.ConfigurableObjects.LogicRuleStateDescriber;
 import net.cs76.projects.student10340912.DomoticaInterface.DataManagement.DataManagerSingleton;
-import net.cs76.projects.student10340912.DomoticaInterface.R;
 
 import java.util.ArrayList;
 

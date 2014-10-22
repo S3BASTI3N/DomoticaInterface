@@ -20,7 +20,7 @@ import net.cs76.projects.student10340912.DomoticaInterface.DataManagement.DataMa
 import net.cs76.projects.student10340912.DomoticaInterface.DataManagement.DatabaseHelper;
 import net.cs76.projects.student10340912.DomoticaInterface.UpdateChecking.Alarm;
 import net.cs76.projects.student10340912.DomoticaInterface.utils.DatabaseUpdatedInterface;
-import net.cs76.projects.student10340912.DomoticaInterface.utils.Group;
+import net.cs76.projects.student10340912.DomoticaInterface.ConfigurableObjects.Group;
 import net.cs76.projects.student10340912.DomoticaInterface.utils.ListViewAdapter;
 
 import java.util.ArrayList;

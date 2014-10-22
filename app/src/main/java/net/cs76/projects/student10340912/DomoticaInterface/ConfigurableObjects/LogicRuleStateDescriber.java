@@ -1,6 +1,6 @@
-package net.cs76.projects.student10340912.DomoticaInterface.utils;
+package net.cs76.projects.student10340912.DomoticaInterface.ConfigurableObjects;
 
-import android.util.Log;
+import net.cs76.projects.student10340912.DomoticaInterface.ConfigurableObjects.Device;
 
 /**
  * Created by sebastien on 22-10-14.

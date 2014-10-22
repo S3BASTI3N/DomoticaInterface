@@ -17,8 +17,8 @@ import android.widget.TextView;
 
 import net.cs76.projects.student10340912.DomoticaInterface.DataManagement.DataManagerSingleton;
 import net.cs76.projects.student10340912.DomoticaInterface.utils.DatabaseUpdatedInterface;
-import net.cs76.projects.student10340912.DomoticaInterface.utils.Device;
-import net.cs76.projects.student10340912.DomoticaInterface.utils.Group;
+import net.cs76.projects.student10340912.DomoticaInterface.ConfigurableObjects.Device;
+import net.cs76.projects.student10340912.DomoticaInterface.ConfigurableObjects.Group;
 import net.cs76.projects.student10340912.DomoticaInterface.utils.ImageViewButton;
 import net.cs76.projects.student10340912.DomoticaInterface.utils.ListViewAdapter;
 import net.cs76.projects.student10340912.DomoticaInterface.utils.ParameterAlertDialog;

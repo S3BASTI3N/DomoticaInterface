@@ -1,10 +1,10 @@
 package net.cs76.projects.student10340912.DomoticaInterface.utils;
 
 import android.content.Context;
-import android.util.Log;
 import android.view.View;
 import android.widget.ImageView;
 
+import net.cs76.projects.student10340912.DomoticaInterface.ConfigurableObjects.Device;
 import net.cs76.projects.student10340912.DomoticaInterface.DataManagement.DataManagerSingleton;
 import net.cs76.projects.student10340912.DomoticaInterface.R;
 

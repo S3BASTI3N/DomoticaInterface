@@ -1,4 +1,4 @@
-package net.cs76.projects.student10340912.DomoticaInterface.utils;
+package net.cs76.projects.student10340912.DomoticaInterface.ConfigurableObjects;
 
 /**
  * Created by sebastien on 14-10-14.

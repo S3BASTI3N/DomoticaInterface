@@ -7,10 +7,10 @@ import android.database.sqlite.SQLiteOpenHelper;
 import android.util.Log;
 
 import net.cs76.projects.student10340912.DomoticaInterface.utils.DatabaseUpdatedInterface;
-import net.cs76.projects.student10340912.DomoticaInterface.utils.Device;
-import net.cs76.projects.student10340912.DomoticaInterface.utils.Group;
-import net.cs76.projects.student10340912.DomoticaInterface.utils.LogicRule;
-import net.cs76.projects.student10340912.DomoticaInterface.utils.LogicRuleStateDescriber;
+import net.cs76.projects.student10340912.DomoticaInterface.ConfigurableObjects.Device;
+import net.cs76.projects.student10340912.DomoticaInterface.ConfigurableObjects.Group;
+import net.cs76.projects.student10340912.DomoticaInterface.ConfigurableObjects.LogicRule;
+import net.cs76.projects.student10340912.DomoticaInterface.ConfigurableObjects.LogicRuleStateDescriber;
 
 import java.util.ArrayList;
 import java.util.Calendar;
@@ -359,7 +359,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         db_write.execSQL( query );
 
         query = "SELECT id FROM logic_rule_state_describers ORDER BY id DESC";
-        Cursor cursor = getReadableDatabase().rawQuery( query, null );
+        Cursor cursor = getReadableDatabase().rawQuery(query, null);
         cursor.moveToFirst();
 
         int id = cursor.getInt(0);

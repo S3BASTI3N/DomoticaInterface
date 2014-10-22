@@ -1,7 +1,6 @@
 package net.cs76.projects.student10340912.DomoticaInterface;
 
 import android.content.Intent;
-import android.database.DataSetObserver;
 import android.graphics.drawable.GradientDrawable;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
@@ -17,20 +16,22 @@ import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import net.cs76.projects.student10340912.DomoticaInterface.DataManagement.DataManagerSingleton;
-import net.cs76.projects.student10340912.DomoticaInterface.utils.CallBackInterface;
+import net.cs76.projects.student10340912.DomoticaInterface.utils.DatabaseUpdatedInterface;
 import net.cs76.projects.student10340912.DomoticaInterface.utils.Device;
 import net.cs76.projects.student10340912.DomoticaInterface.utils.Group;
 import net.cs76.projects.student10340912.DomoticaInterface.utils.ImageViewButton;
+import net.cs76.projects.student10340912.DomoticaInterface.utils.ListViewAdapter;
+import net.cs76.projects.student10340912.DomoticaInterface.utils.ParameterAlertDialog;
 
 import java.util.ArrayList;
 
-public class GroupActivity extends ActionBarActivity implements CallBackInterface {
+public class GroupActivity extends ActionBarActivity implements DatabaseUpdatedInterface {
 
     private DataManagerSingleton dataManager_ = null;
     public ArrayList<Device> devices_;
 
     private int groupId_;
-    private Group group;
+    private Group group_;
 
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -38,56 +39,30 @@ public class GroupActivity extends ActionBarActivity implements CallBackInterfac
         groupId_ = getIntent().getIntExtra( DataManagerSingleton.MESSAGE_GROUP_ID, -1 );
 
         dataManager_ = DataManagerSingleton.getInstance(this);
-        devices_ = dataManager_.getDevicesByGroupId(groupId_);
-        group = dataManager_.getGroupById( groupId_ );
 
-        Log.d( "GroupActivity", "Getting devices for group: " + groupId_ );
+    }
+
+    @Override
+    public void onStart() {
+        super.onStart();
+
+        dataManager_.setActiveActivity( this );
+
+        devices_ = dataManager_.getDevicesByGroupId(groupId_);
+        group_ = dataManager_.getGroupById( groupId_ );
+
+        Log.d("GroupActivity", "Getting devices for menu_group: " + groupId_);
 
         setContentView(R.layout.activity_group);
 
-        getSupportActionBar().setTitle( group.name_ );
+        getSupportActionBar().setTitle( group_.name_ );
 
         ListView group_list = (ListView)findViewById(R.id.device_list);
 
-        ListAdapter theListAdapter = new ListAdapter() {
-            @Override
-            public boolean areAllItemsEnabled() {
-                return true;
-            }
-
-            @Override
-            public boolean isEnabled(int position) {
-                return position < devices_.size();
-            }
-
-            @Override
-            public void registerDataSetObserver(DataSetObserver observer) {
-
-            }
-
-            @Override
-            public void unregisterDataSetObserver(DataSetObserver observer) {
-
-            }
-
+        ListAdapter theListAdapter = new ListViewAdapter() {
             @Override
             public int getCount() {
                 return devices_.size();
-            }
-
-            @Override
-            public Object getItem(int position) {
-                return null;
-            }
-
-            @Override
-            public long getItemId(int position) {
-                return 0;
-            }
-
-            @Override
-            public boolean hasStableIds() {
-                return false;
             }
 
             @Override
@@ -98,17 +73,6 @@ public class GroupActivity extends ActionBarActivity implements CallBackInterfac
                 theTextView.setText(devices_.get(position).name_);
                 theTextView.setTextColor(getResources().getColor(R.color.text_color));
                 theTextView.setTextSize(getResources().getDimension(R.dimen.normal_text_size));
-                theTextView.setId(devices_.get(position).id_);
-
-                theTextView.setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View v) {
-                        Intent jump = new Intent(getBaseContext(), DeviceActivity.class);
-
-                        jump.putExtra(dataManager_.MESSAGE_DEVICE_ID, v.getId());
-
-                    }
-                });
 
                 ImageView button = new ImageViewButton( parent.getContext(), devices_.get(position), dataManager_ );
 
@@ -122,23 +86,21 @@ public class GroupActivity extends ActionBarActivity implements CallBackInterfac
                 params.addRule(RelativeLayout.ALIGN_PARENT_RIGHT);
                 params.height = 50;
 
+                rowLayout.setId(devices_.get(position).id_);
+                rowLayout.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        Intent jump = new Intent(getBaseContext(), DeviceActivity.class);
+
+                        jump.putExtra(dataManager_.MESSAGE_DEVICE_ID, v.getId());
+
+                        startActivity( jump );
+
+                    }
+                });
+
                 return rowLayout;
 
-            }
-
-            @Override
-            public int getItemViewType(int position) {
-                return 0;
-            }
-
-            @Override
-            public int getViewTypeCount() {
-                return 1;
-            }
-
-            @Override
-            public boolean isEmpty() {
-                return false;
             }
         };
 
@@ -146,7 +108,7 @@ public class GroupActivity extends ActionBarActivity implements CallBackInterfac
 
         int[] colors = { getResources().getColor( R.color.divider_color), 0 };
         group_list.setDivider( new GradientDrawable(GradientDrawable.Orientation.LEFT_RIGHT, colors));
-        group_list.setDividerHeight( 1 );
+        group_list.setDividerHeight( getResources().getDimensionPixelSize( R.dimen.divider_height ) );
     }
 
     @Override
@@ -160,7 +122,7 @@ public class GroupActivity extends ActionBarActivity implements CallBackInterfac
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.group, menu);
+        getMenuInflater().inflate( R.menu.menu_group, menu );
         return true;
     }
 
@@ -170,15 +132,38 @@ public class GroupActivity extends ActionBarActivity implements CallBackInterfac
         // automatically handle clicks on the Home/Up button, so long
         // as you specify a parent activity in AndroidManifest.xml.
         int id = item.getItemId();
-        if (id == R.id.action_settings) {
+        if (id == R.id.action_group_name ) {
+            ParameterAlertDialog dialog = new ParameterAlertDialog( this, dataManager_, group_.name_, group_, ParameterAlertDialog.TYPE_GROUP_NAME );
+            dialog.show();
+            return true;
+        }
+        else if (id == R.id.action_group_add ) {
+            ParameterAlertDialog dialog = new ParameterAlertDialog( this, dataManager_, group_.name_, group_, ParameterAlertDialog.TYPE_GROUP_ADD );
+            dialog.show();
+            return true;
+        }
+        else if (id == R.id.action_group_remove ) {
+            ParameterAlertDialog dialog = new ParameterAlertDialog( this, dataManager_, group_.name_, group_, ParameterAlertDialog.TYPE_GROUP_REMOVE );
+            dialog.show();
+            return true;
+        }
+        else if( id == R.id.action_group_remove_group ) {
+            dataManager_.removeGroupById( groupId_ );
+            finish();
             return true;
         }
         return super.onOptionsItemSelected(item);
     }
 
-    public void onCallBack() {
+    public void onDatabaseUpdated() {
         devices_ = dataManager_.getDevicesByGroupId( groupId_ );
+        group_ = dataManager_.getGroupById( groupId_ );
         ListView device_list = (ListView)findViewById( R.id.device_list);
         device_list.invalidate();
+
+        getSupportActionBar().setTitle( group_.name_ );
+
+        onStart();
+
     }
 }

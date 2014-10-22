@@ -1,0 +1,24 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context="net.cs76.projects.student10340912.DomoticaInterface.GroupActivity" >
+    <item android:id="@+id/action_group_name"
+        android:title="Change name"
+        android:orderInCategory="100"
+        app:showAsAction="never" />
+
+    <item android:id="@+id/action_group_add"
+        android:title="Add device"
+        android:orderInCategory="100"
+        app:showAsAction="never" />
+
+    <item android:id="@+id/action_group_remove"
+        android:title="Remove device"
+        android:orderInCategory="100"
+        app:showAsAction="never" />
+
+    <item android:id="@+id/action_group_remove_group"
+        android:title="Remove group"
+        android:orderInCategory="100"
+        app:showAsAction="never" />
+</menu>

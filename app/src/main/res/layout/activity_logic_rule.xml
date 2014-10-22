@@ -6,15 +6,14 @@
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
     android:paddingBottom="@dimen/activity_vertical_margin"
-    android:id="@+id/home_layout"
-    tools:context=".LandingActivity"
-    android:background="#ff000000">
+    android:background="#000"
+    tools:context="net.cs76.projects.student10340912.DomoticaInterface.LogicRuleActivity">
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Groups"
-        android:id="@+id/text_groups"
+        android:text="Conditions"
+        android:id="@+id/text_logic_conditions"
         android:layout_alignParentTop="true"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
@@ -26,23 +25,38 @@
     <View
         android:layout_width="fill_parent"
         android:layout_height="1dp"
-        android:layout_below="@+id/text_groups"
+        android:layout_below="@+id/text_logic_conditions"
         android:background="@color/divider_color"/>
 
     <ListView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/group_list"
-        android:layout_below="@+id/text_groups"
+        android:id="@+id/logic_conditions"
+        android:layout_below="@+id/text_logic_conditions"
         android:layout_centerHorizontal="true"
-        android:layout_alignParentBottom="false"
         />
 
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Actions"
+        android:id="@+id/text_logic_actions"
+        android:layout_below="@+id/logic_conditions"
+        android:textColor="@color/text_color"
+        android:textSize="@dimen/large_text_size" />
 
     <View
         android:layout_width="fill_parent"
         android:layout_height="1dp"
-        android:layout_below="@+id/text_groups"
+        android:layout_below="@+id/text_logic_actions"
         android:background="@color/divider_color"/>
+
+    <ListView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/logic_actions"
+        android:layout_below="@+id/text_logic_actions"
+        android:layout_centerHorizontal="true"
+        />
 
 </RelativeLayout>

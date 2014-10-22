@@ -10,6 +10,9 @@ public class Device {
     public int state_;
     public int notification_;
 
+    public static int NOTIFICATION_ON = 1;
+    public static int NOTIFICATION_OFF = 0;
+
     public Device( int id, String name, int state, int notification ) {
 
         id_ = id;

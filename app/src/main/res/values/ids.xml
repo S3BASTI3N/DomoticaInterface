@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <item type="id" name="condition_image_id" />
+    <item type="id" name="condition_text_id" />
+    <item type="id" name="arrow_text_id" />
+    <item type="id" name="action_image_id" />
+    <item type="id" name="action_text_id" />
+</resources>

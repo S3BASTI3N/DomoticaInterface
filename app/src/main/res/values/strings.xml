@@ -7,7 +7,8 @@
     <string name="landing_action_name">Domotica Interface</string>
     <string name="title_activity_group">GroupActivity</string>
     <string name="title_activity_device">DeviceActivity</string>
-
-    <string name="server_url">http://www.uvaatwork.nl/</string>
+    <string name="logic_menu_string">Edit logic</string>
+    <string name="title_activity_logic">LogicActivity</string>
+    <string name="title_activity_logic_rule">LogicRuleActivity</string>
 
 </resources>

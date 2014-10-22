@@ -1,0 +1,31 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context="net.cs76.projects.student10340912.DomoticaInterface.LogicRuleActivity" >
+
+    <item android:id="@+id/action_logic_change_con"
+        android:title="Condition"
+        android:orderInCategory="100"
+        app:showAsAction="never" />
+
+    <item android:id="@+id/action_logic_change_con_state"
+        android:title="Condition state"
+        android:orderInCategory="100"
+        app:showAsAction="never" />
+
+    <item android:id="@+id/action_logic_change_act"
+        android:title="Action"
+        android:orderInCategory="100"
+        app:showAsAction="never" />
+
+    <item android:id="@+id/action_logic_change_act_state"
+        android:title="Action state"
+        android:orderInCategory="100"
+        app:showAsAction="never" />
+
+    <item android:id="@+id/action_logic_remove"
+        android:title="Remove rule"
+        android:orderInCategory="100"
+        app:showAsAction="never" />
+
+</menu>

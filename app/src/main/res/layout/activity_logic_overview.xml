@@ -6,15 +6,14 @@
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
     android:paddingBottom="@dimen/activity_vertical_margin"
-    android:id="@+id/home_layout"
-    tools:context=".LandingActivity"
+    tools:context="net.cs76.projects.student10340912.DomoticaInterface.LogicOverviewActivity"
     android:background="#ff000000">
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Groups"
-        android:id="@+id/text_groups"
+        android:text="Rules"
+        android:id="@+id/text_logic_rules"
         android:layout_alignParentTop="true"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
@@ -26,23 +25,17 @@
     <View
         android:layout_width="fill_parent"
         android:layout_height="1dp"
-        android:layout_below="@+id/text_groups"
+        android:layout_below="@+id/text_logic_rules"
         android:background="@color/divider_color"/>
 
     <ListView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/group_list"
-        android:layout_below="@+id/text_groups"
+        android:id="@+id/logic_rules_list"
+        android:layout_below="@+id/text_logic_rules"
         android:layout_centerHorizontal="true"
         android:layout_alignParentBottom="false"
         />
 
-
-    <View
-        android:layout_width="fill_parent"
-        android:layout_height="1dp"
-        android:layout_below="@+id/text_groups"
-        android:background="@color/divider_color"/>
-
 </RelativeLayout>
+

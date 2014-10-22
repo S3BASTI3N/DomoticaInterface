@@ -14,7 +14,6 @@
 
 #### Server side
 
-- display all messages from the application in the server console
 - let server send a push notification to the application
 - execute the application messages
 - handle page updates when there has been a database change

@@ -1,0 +1,17 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context="net.cs76.projects.student10340912.DomoticaInterface.LogicOverviewActivity" >
+
+    <item android:id="@+id/action_overview_add"
+        android:title="Add rule"
+        android:orderInCategory="100"
+        app:showAsAction="never" />
+
+    <item android:id="@+id/action_overview_remove"
+        android:title="Remove rule"
+        android:orderInCategory="100"
+        app:showAsAction="never" />
+
+
+</menu>

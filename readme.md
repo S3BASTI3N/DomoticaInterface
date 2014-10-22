@@ -1,6 +1,8 @@
 ## DomoticaInterface
 ----------------------
 
+The test server can be found here: http://uvaatwork.nl/DomoticaInterface/
+
 Domotica is all about connecting every single electronic device to the internet in order to enable
 easy access over the internet. Once these devices are connected a user friendly interface
 is required to manipulate them. This application provides this interface.

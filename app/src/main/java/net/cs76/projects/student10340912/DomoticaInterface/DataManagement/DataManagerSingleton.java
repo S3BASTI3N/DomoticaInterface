@@ -56,11 +56,6 @@ public class DataManagerSingleton {
 
     }
 
-    public void updateDatabase() {
-        database_ = new DatabaseHelper( context_ );
-        database_.updateDatabase();
-    }
-
     public ArrayList<LogicRule> getLogicRules() {
         return database_.getLogicRules();
     }
@@ -70,7 +65,11 @@ public class DataManagerSingleton {
     }
 
     public void setActiveActivity( Activity activity ) {
+
         this.activity_ = activity;
+
+        //database_.updateDatabase();
+
     }
 
     public ArrayList<Group> getGroups() {

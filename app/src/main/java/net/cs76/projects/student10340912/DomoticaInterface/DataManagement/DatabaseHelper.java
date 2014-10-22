@@ -61,6 +61,8 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
         Log.d( "DatabaseHelper", "Async started");
 
+        //db.execSQL( "CREATE TABLE update_times( id INTEGER, stamp TEXT );");
+
 
     }
 
@@ -70,10 +72,10 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     }
 
     public void callBack( String message, int type ) {
-        if( message == null ) {
+        if( message == null || message == "" ) {
             return;
         }
-        Log.d( "DatabaseHelper", message );
+        Log.d( "DatabaseHelper", "Got message: " + message );
 
         SQLiteDatabase db_write = getWritableDatabase();
         String[] statements;
@@ -231,7 +233,6 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     public ArrayList<Group> getGroups() {
         SQLiteDatabase db_read = getReadableDatabase();
 
-        // TODO add menu_group id
         Cursor cursor = db_read.rawQuery( "SELECT id, name FROM groups", null );
         cursor.moveToFirst();
 

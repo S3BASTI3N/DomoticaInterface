@@ -43,19 +43,14 @@ id(int), name(String)
 group_id(int), device_id(int)
 
 **logic_rule**
-id(int), name(String)
+id(int), name(String), condition_id(int), action_id(int)
 
-**relation_logic_rule_device**
-logic_rule_id(int), device_id(int), state(int), condition(boolean)
-
-**user**
-id(int), name(String), email(String)
+**logic_rule_device_state_describer**
+id(int), device_id(int), state(int)
 
 
 
 ### Libraries
 
 Toast, for on activity notifications.
-
-[Android-color-picker](https://code.google.com/p/android-color-picker), for selection a color for multicolored lights.
 

@@ -19,16 +19,10 @@ to combine certain switches with certain devices.
 
 ##### General
 
-- The app should support simple on/off devices, rgb lights and on/off switches.
+- The app should support simple on/off devices and on/off switches.
 
 - A light should have the following properties: id, room, status (on/off), name.
-- A RGB lights should have the following properties: id, room, red, green, blue, intensity, name.
 - A switch should have the following properties: id, room, status (on/off), name.
-
-- The app should allow the user to provide credentials which allow the app to access an online database
-which contains all available devices of the corresponding user.
-
-- The app should allow push notifications from the server when the state of a device is altered.
 
 ##### Display mode
 
@@ -36,7 +30,7 @@ which contains all available devices of the corresponding user.
 
 - Allow the user to view all available devices in a single room and allow the user to select a single device.
 
-- The status of the device should be displayed in the list with a on/off symbol or a color for the rgb lights.
+- The status of the device should be displayed in the list with a on/off symbol.
 
 - The user should be able to change the status of the device in the list view and in the detailed device activity.
 
@@ -44,7 +38,7 @@ which contains all available devices of the corresponding user.
 
 ##### Edit mode
 
-- The user should be able to view all switch-light combinations in a single list and in a per room view.
+- The user should be able to view all switch-light combinations in a single list.
 
 - The user should be able to add, edit and remove switch-light combinations.
 
